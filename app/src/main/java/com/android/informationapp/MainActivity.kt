@@ -14,7 +14,9 @@ class MainActivity : AppCompatActivity() {
         dataBinding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
         dataBinding.apply {
             button.setOnClickListener {
-                val intent = Intent(this@MainActivity, ResultActivity::class.java)
+                intent = Intent(this@MainActivity, ResultActivity::class.java)
+                intent.putExtra("name", inputName.text.toString())
+                intent.putExtra("email", inputEmail.text.toString())
                 startActivity(intent)
             }
         }

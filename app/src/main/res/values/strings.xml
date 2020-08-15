@@ -4,4 +4,5 @@
     <string name="biodata">Biodata</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
+    <string name="berhasil">Berhasil</string>
 </resources>
