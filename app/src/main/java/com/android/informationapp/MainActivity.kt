@@ -3,6 +3,7 @@ package com.android.informationapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.android.informationapp.databinding.ActivityMainBinding
 
@@ -20,5 +21,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        Log.i("Lifecycle","onCreate")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("Lifecycle", "onStart")
     }
 }
