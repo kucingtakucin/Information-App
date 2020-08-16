@@ -33,4 +33,14 @@ class ResultActivity : AppCompatActivity() {
         super.onStart()
         Log.i("Lifecycle", "onStart")
     }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("Lifecycle", "onPause")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("Lifecycle", "onResume")
+    }
 }
