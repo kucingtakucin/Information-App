@@ -30,13 +30,23 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    override fun onPause() {
+        super.onPause()
+        Log.i("Lifecycle", "onPause")
+    }
+
     override fun onResume() {
         super.onResume()
         Log.i("Lifecycle", "onResume")
     }
 
-    override fun onPause() {
-        super.onPause()
-        Log.i("Lifecycle", "onPause")
+    override fun onStop() {
+        super.onStop()
+        Log.i("Lifecycle", "onStop")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("Lifecycle", "onRestart")
     }
 }
