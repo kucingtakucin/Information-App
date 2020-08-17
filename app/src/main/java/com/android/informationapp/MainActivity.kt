@@ -3,12 +3,23 @@ package com.android.informationapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.android.informationapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var dataBinding: ActivityMainBinding
+    private lateinit var mainHandler: Handler
+    private var counter: Int = 0
+    private val tikTok = object: Runnable {
+        override fun run() {
+            counter++
+            Log.i("Lifecycle", counter.toString())
+            mainHandler.postDelayed(this, 1000)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +32,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        mainHandler = Handler(Looper.getMainLooper())
+        mainHandler.post(tikTok)
         Log.i("Lifecycle","onCreate")
     }
 
@@ -32,11 +45,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
+        mainHandler.removeCallbacks(tikTok)
         Log.i("Lifecycle", "onPause")
     }
 
     override fun onResume() {
         super.onResume()
+        mainHandler.post(tikTok)
         Log.i("Lifecycle", "onResume")
     }
 
