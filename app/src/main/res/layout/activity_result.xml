@@ -9,26 +9,50 @@
         tools:context=".ResultActivity">
 
         <TextView
-            android:id="@+id/Result"
+            android:id="@+id/counterText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/berhasil"
-            android:textSize="24sp"
+            android:textSize="36sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.401" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/shareButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="Share"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/Result"
-            app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintStart_toStartOf="@+id/Result"
-            app:layout_constraintTop_toBottomOf="@+id/Result"
-            app:layout_constraintVertical_bias="0.023" />
+            app:layout_constraintEnd_toEndOf="@+id/counterText"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="@+id/counterText"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.203" />
+
+        <Button
+            android:id="@+id/upButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/counterText"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="@+id/counterText"
+            app:layout_constraintTop_toBottomOf="@+id/counterText"
+            app:layout_constraintVertical_bias="0.279" />
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="65dp"
+            android:layout_height="16dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/counterText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shareButton" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
