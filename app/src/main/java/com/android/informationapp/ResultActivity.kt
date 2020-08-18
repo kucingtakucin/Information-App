@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.android.informationapp.databinding.ActivityResultBinding
@@ -19,6 +18,10 @@ class ResultActivity : AppCompatActivity() {
         dataBinding = DataBindingUtil.setContentView(this@ResultActivity, R.layout.activity_result)
         dataBinding.apply {
             resultText.text = intent.getStringExtra("name") + "\n" + intent.getStringExtra("email")
+            toolbarKita.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24_white)
+            setSupportActionBar(toolbarKita)
+            supportActionBar?.title = "Counter App"
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
             shareButton.setOnClickListener {
                 val sendIntent: Intent = Intent().apply {
                     action = Intent.ACTION_SEND
@@ -27,16 +30,14 @@ class ResultActivity : AppCompatActivity() {
                 }
                 startActivity(sendIntent)
             }
-
             if (savedInstanceState !== null) {
-                resultText.text = savedInstanceState.getString("COUNTER_NUMBER")
+                counterText.text = savedInstanceState.getString("COUNTER_NUMBER")
                 counter = savedInstanceState.getString("COUNTER_NUMBER")?.toInt()!!
             }
             upButton.setOnClickListener {
                 counter++
-                resultText.text = counter.toString()
+                counterText.text = counter.toString()
             }
-
         }
         Log.i("Lifecycle", "onCreate")
     }

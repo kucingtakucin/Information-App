@@ -8,6 +8,16 @@
         android:layout_height="match_parent"
         tools:context=".ResultActivity">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarKita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextColor="@color/putih" />
+
         <TextView
             android:id="@+id/counterText"
             android:layout_width="wrap_content"
@@ -25,7 +35,7 @@
             android:id="@+id/shareButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Share"
+            android:text="@string/share"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/counterText"
             app:layout_constraintHorizontal_bias="0.507"
@@ -37,7 +47,7 @@
             android:id="@+id/upButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UP"
+            android:text="@string/up"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/counterText"
             app:layout_constraintHorizontal_bias="0.507"
@@ -47,9 +57,9 @@
 
         <TextView
             android:id="@+id/resultText"
-            android:layout_width="65dp"
-            android:layout_height="16dp"
-            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_world"
             app:layout_constraintBottom_toTopOf="@+id/counterText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

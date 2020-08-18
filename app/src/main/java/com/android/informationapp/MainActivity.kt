@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         dataBinding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
         dataBinding.apply {
+            setSupportActionBar(toolbarKita)
+            supportActionBar?.title = "Biodata"
             button.setOnClickListener {
                 intent = Intent(this@MainActivity, ResultActivity::class.java)
                 intent.putExtra("name", inputName.text.toString())
